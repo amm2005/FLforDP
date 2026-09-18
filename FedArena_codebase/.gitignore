@@ -1,0 +1,34 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Optuna tuning studies
+tuning_studies/
+
+# Deprecated runs excluded from results/ to keep reports clean
+archive/
+
+sheets/
+
+# Logs and graphics
+outputs/
+*.out
+*.txt
+#datasets
+data/
+cifar10/
+
+# Obsidian (repo opened as a vault): app state + local-only private notes
+.obsidian/
+# The repo-root (parent) .gitignore has `notes/`, which would ignore this
+# subfolder's notes/ too. Re-include it here, but keep the private subfolder out.
+!notes/
+notes/_private/
+.DS_Store

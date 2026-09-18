@@ -1,0 +1,12 @@
+_target_: federated_methods.fedrep.fedrep.FedRep
+# Head (personal classifier) model: local epochs tau — TUNED.
+fedrep_head_epochs: 10
+# Body (shared feature extractor) model: local epochs — TUNED. FedRep does NOT use
+# federated_params.round_epochs; each model has its own epoch count.
+fedrep_body_epochs: 1
+head_param_keys:
+  - fc
+  - linear
+  - classifier
+# lr / weight_decay are NOT tuned
+fedavg_study_name: adamw_nq_bs256_natural

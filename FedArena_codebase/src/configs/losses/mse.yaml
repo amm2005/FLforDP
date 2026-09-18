@@ -1,0 +1,4 @@
+loss_name: "mse"
+config:
+  _target_: torch.nn.MSELoss
+  reduction: 'mean'

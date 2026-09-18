@@ -1,0 +1,22 @@
+_target_: federated_datasets.expedia_dataset.ExpediaDataset
+data_sources:
+
+  train_map_file:
+    - data/expedia_hotel_recommendations/expedia_6000_100000.parquet
+
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: site_name       
+time_column: date_time         
+target_column: hotel_cluster   
+num_classes: 100              
+cat_nunique_max: 1000         
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

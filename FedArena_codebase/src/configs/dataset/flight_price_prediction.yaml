@@ -1,0 +1,19 @@
+_target_: federated_datasets.flight_price_prediction_dataset.FlightPricePredictionDataset
+data_sources:
+  train_map_file:
+    - data/flight_price_prediction/Clean_Dataset.csv
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: airline
+time_column: null
+target_column: price
+target_transform: log1p
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

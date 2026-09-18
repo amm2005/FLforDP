@@ -1,0 +1,16 @@
+_target_: federated_datasets.peta_dataset.PETADataset
+
+
+data_sources:
+  train_map_file:
+    - /home/USER/fl_revisiting/Federated-Research-LIB-dev/data/PETA/peta_annotations.json
+  test_map_file:
+    - /home/USER/fl_revisiting/Federated-Research-LIB-dev/data/PETA/peta_annotations.json
+
+
+base_path: /home/USER/fl_revisiting/Federated-Research-LIB-dev/data/PETA
+
+mode: train
+
+
+client_column: source_dataset

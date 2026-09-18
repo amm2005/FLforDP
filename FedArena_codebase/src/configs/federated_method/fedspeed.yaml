@@ -1,0 +1,4 @@
+_target_: federated_methods.fedspeed.fedspeed.FedSpeed
+lambda_param: 0.1
+alpha: 1.0
+rho_0: 0.1

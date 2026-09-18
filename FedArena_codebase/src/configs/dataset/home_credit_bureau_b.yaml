@@ -1,0 +1,22 @@
+_target_: federated_datasets.home_credit_bureau_b_dataset.HomeCreditBureauBDataset
+
+data_sources:
+  train_map_file:
+    - data/home_credit_bureau_b/bureau_b_h6_natural.parquet
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: credor_3940957M
+split_column: split
+
+
+num_policy: standard
+
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

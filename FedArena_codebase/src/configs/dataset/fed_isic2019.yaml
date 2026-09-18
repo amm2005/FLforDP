@@ -1,0 +1,13 @@
+_target_: federated_datasets.fed_isic2019_dataset.FedISIC2019Dataset
+
+data_sources:
+  train_map_file:
+    - data/fed_isic2019/fed_isic2019_map.csv
+  test_map_file:
+    - data/fed_isic2019/fed_isic2019_map.csv
+
+images_dir: data/fed_isic2019/ISIC_2019_Training_Input_preprocessed
+
+base_path: data/fed_isic2019
+mode: train
+client_column: center

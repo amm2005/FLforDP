@@ -1,0 +1,5 @@
+_target_: federated_methods.ditto.ditto.Ditto
+ditto_lambda: 0.1
+ditto_personal_lr: 0.0003
+ditto_personal_epochs: 1
+fedavg_study_name: adamw_nq_bs256_natural

@@ -1,0 +1,21 @@
+_target_: federated_datasets.covid19_dataset.Covid19Dataset
+data_sources:
+  train_map_file:
+    - data/covid19/train_df.csv
+  test_map_file:
+    - data/covid19/test_df.csv
+
+base_path: data
+mode: train
+client_column: country
+time_column: date
+target_column: daily_new_cases
+target_transform: log1p
+
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

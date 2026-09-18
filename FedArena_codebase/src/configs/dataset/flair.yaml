@@ -1,0 +1,15 @@
+_target_: federated_datasets.flair_dataset.FLAIRDataset
+
+data_sources:
+  train_map_file:
+    - data/flair/labels_and_metadata.json
+  test_map_file: null
+
+base_path: data
+mode: train
+
+images_dir: data/flair/small_images
+client_column: user_id
+
+
+n_clients_select: 10

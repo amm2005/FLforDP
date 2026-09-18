@@ -1,0 +1,23 @@
+_target_: federated_datasets.text_classification_dataset.TextClassificationDataset
+data_sources:
+  train_map_file:
+    - /home/USER/.cache/kagglehub/datasets/uciml/news-aggregator-dataset/versions/1/uci-news-aggregator.csv
+  # null → _merge_test_data_for_pool is a no-op when server_pool_enabled=True
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: "PUBLISHER"
+text_column: "TITLE"         # per-client temporal split key
+target_column: "CATEGORY"
+model_name: "bert-base-uncased"
+max_len: 512
+num_classes: 4
+
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

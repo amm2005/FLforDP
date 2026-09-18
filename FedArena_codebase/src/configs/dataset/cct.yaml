@@ -1,0 +1,16 @@
+_target_: federated_datasets.cct_dataset.CCTDataset
+
+
+
+data_sources:
+  train_map_file:
+    - data/cct/caltech_images_20210113.json
+  test_map_file:
+    - data/cct/caltech_images_20210113.json
+
+images_dir: data/cct/cct_images_256
+
+base_path: data
+mode: train
+client_column: location
+n_clients_select: 5

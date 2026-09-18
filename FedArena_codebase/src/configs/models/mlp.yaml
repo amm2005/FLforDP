@@ -1,0 +1,6 @@
+_target_: utils.model_utils.MLP
+n_num_features: 100    # set at runtime by the dataset
+cat_cardinalities: []  # set at runtime by the dataset
+num_classes: 2         # set at runtime by the dataset
+hidden_dims: [512, 512]
+dropout: 0.2

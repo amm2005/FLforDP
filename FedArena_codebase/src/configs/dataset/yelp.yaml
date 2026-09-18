@@ -1,0 +1,21 @@
+_target_: federated_datasets.yelp_dataset.TextClassificationDataset
+data_sources:
+  train_map_file:
+    - home/USER/fl_revisiting/Federated-Research-LIB-dev/data/yelp/yelp_processed.parquet
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: business_id
+text_column: text
+target_column: stars
+model_name: "bert-base-uncased"
+max_len: 512
+num_classes: 5
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []

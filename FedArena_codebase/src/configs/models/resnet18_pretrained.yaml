@@ -1,0 +1,4 @@
+# ResNet-18, ImageNet-pretrained, head = Linear(512, num_classes). BN stats frozen during training.
+_target_: utils.model_utils.flair_resnet18
+num_classes: 17       # overwritten at runtime by FLAIRDataset.define_num_classes
+pretrained: true

@@ -1,0 +1,4 @@
+_target_: distributions.column_distribution.ColumnDistribution
+client_column: credor_3940957M
+top_n_clients: null  # null = all clients; integer = top N by train size
+verbose: true

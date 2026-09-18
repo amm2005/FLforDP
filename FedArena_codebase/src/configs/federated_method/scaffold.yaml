@@ -1,0 +1,2 @@
+_target_: federated_methods.scaffold.scaffold.Scaffold
+local_lr: 0.0003

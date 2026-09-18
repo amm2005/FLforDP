@@ -1,0 +1,66 @@
+defaults:
+    - trainer: tabular_trainer
+    - models@models_dict.model1: mlp
+    - dataset@train_dataset: home_credit_bureau_b
+    - dataset@test_dataset: home_credit_bureau_b
+    - distribution: column
+    - federated_method: fedavg
+    - losses@loss: ce
+    - manager: sequential
+    - optimizer: adam
+    - compressor: no_compress
+    - _self_
+models: ${oc.dict.values:models_dict}
+model: ${models_dict.model1}
+
+random_state: 42
+single_run_dir: ${hydra:run.dir}
+
+training_params:
+    batch_size: 512
+    num_workers: 4
+    device: "cuda"
+    device_ids: [0]
+
+federated_params:
+    amount_of_clients: 10
+    communication_rounds: 500   # max; early stopping may end sooner
+    early_stopping_patience: 16
+    round_epochs: 1
+    # local split fractions — must sum to 1
+    client_train_frac: 0.6
+    client_val_frac: 0.2
+    client_test_frac: 0.2
+    # server pool: fraction of each client's local val/test carved out for the server (0.0–1.0)
+    server_pool_enabled: True
+    server_val_frac: 0.5
+    server_test_frac: 0.5
+    print_client_metrics: False
+    # single target metric for checkpoint + early stopping
+    server_saving_metrics: ["ROC-AUC"]
+    server_saving_agg: "uniform" # weighted
+    clients_attack_types: "no_attack" # label_flip, sign_flip, random_grad (or list)
+    prop_attack_clients: 0.0 # must match clients_attack_types
+    attack_scheme: "no_attack" # constant, random_rounds, random_clients, random_rounds_random_clients
+    prop_attack_rounds: 0.0
+    local_only_ensemble: uniform # uniform | weighted
+    max_grad_norm: 1.0 # client-side grad clipping; null = disabled
+
+tuning:
+    n_trials: 50
+    metric: "ROC-AUC"
+    direction: "maximize"
+    enable_pruning: false   # true = MedianPruner, false = NopPruner
+    n_startup_trials: 10   # trial-level warmup (ignored if enable_pruning=false)
+    n_warmup_steps: 10     # round-level warmup (ignored if enable_pruning=false)
+    study_name: null
+    storage: null
+
+# outputs are organized as outputs/<dataset>/<method>/<study>/<timestamp>
+hydra:
+    job:
+        # Dataset paths in configs and launch scripts are relative to the
+        # repository root. Keep that working directory for every run.
+        chdir: false
+    run:
+        dir: outputs/${hydra:runtime.choices.dataset@train_dataset}/${hydra:runtime.choices.federated_method}/${tuning.study_name}/${now:%Y-%m-%d_%H-%M-%S}

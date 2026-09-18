@@ -1,0 +1,11 @@
+_target_: federated_methods.pfedme.pfedme.PFedMe
+
+# Optuna tunes ONLY pfedme_lambda + pfedme_beta (grid in search_space.py);
+# K, eta, R, personal_lr are fixed here
+pfedme_lambda: 15.0            
+pfedme_eta: 0.01            
+pfedme_beta: 1.0             
+pfedme_R: null               
+pfedme_uniform_agg: true     
+pfedme_personal_lr: 0.0003  
+fedavg_study_name: adamw_nq_bs256_natural

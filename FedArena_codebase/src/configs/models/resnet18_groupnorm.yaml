@@ -1,0 +1,2 @@
+_target_: utils.model_utils.flair_resnet18_groupnorm
+num_classes: 17       # overwritten at runtime by FLAIRDataset.define_num_classes

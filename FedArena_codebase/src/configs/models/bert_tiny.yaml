@@ -1,0 +1,3 @@
+_target_: utils.model_utils.BertTiny
+model_name: "huawei-noah/TinyBERT_General_4L_312D"
+num_classes: 4

@@ -1,0 +1,22 @@
+_target_: federated_datasets.fannie_mae_dataset.FannieMaeDataset
+data_sources:
+
+  train_map_file:
+    - data/fannie_mae/fannie_mae_d90_h84_oot100_ex-wells.parquet
+
+  test_map_file: null
+
+base_path: data
+mode: train
+client_column: seller
+split_column: split
+
+num_policy: standard
+
+
+num_cols: []
+cat_cols: []
+cat_cardinalities: []
+ordinal_categories: []
+scaler_mean: []
+scaler_scale: []
